@@ -9,16 +9,96 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet var tableView: UITableView! {
+        didSet {
+            tableView.dataSource = self
+        }
+    }
+    
+    // MARK: - Properties
+    
+    private let reuseIdentifier = "defaultCell"
+    private let postsListAPIClient = PostsListAPIClient()
+    private var dataSource: [Post] = []
+    
+    // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        getPosts()
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// MARK: - API
+
+extension ViewController {
+    
+    private func getPosts(for page: Int = 1) {
+        
+        showLoader()
+        
+        postsListAPIClient.getPosts(for: page) { [weak self] response in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.hideLoader()
+            switch response.result {
+            case .success(let posts):
+                strongSelf.dataSource = posts
+                strongSelf.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
+}
 
+// MARK: - UI
+
+extension ViewController {
+    
+    private func showLoader() {
+        activityIndicatorView.startAnimating()
+    }
+    
+    private func hideLoader() {
+        activityIndicatorView.stopAnimating()
+    }
+    
+    private func showAlert(title: String, mesage: String) {
+        let alertController = UIAlertController(title: title, message: mesage, preferredStyle: .alert)
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let item = dataSource[indexPath.row]
+        let cell: UITableViewCell
+        
+        if let reusableCell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) {
+            cell = reusableCell
+        } else {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        }
+        
+        cell.textLabel?.text = item.titleText
+        cell.detailTextLabel?.text = item.descriptionText
+        
+        return cell
+    }
 }
 

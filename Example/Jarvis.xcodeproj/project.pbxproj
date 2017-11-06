@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506055A31FB0651C001F1B16 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506055A21FB0651C001F1B16 /* Post.swift */; };
+		506055A61FB079B5001F1B16 /* PostsListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506055A51FB079B4001F1B16 /* PostsListAPI.swift */; };
+		506055A81FB07AD1001F1B16 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506055A71FB07AD1001F1B16 /* APIError.swift */; };
+		506055AA1FB084B5001F1B16 /* PostsListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506055A91FB084B5001F1B16 /* PostsListAPIClient.swift */; };
+		506055AD1FB08B5B001F1B16 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506055AC1FB08B5B001F1B16 /* PostCellViewModel.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +35,11 @@
 /* Begin PBXFileReference section */
 		120E527F653A84709AA7912E /* Pods-Jarvis_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jarvis_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jarvis_Example/Pods-Jarvis_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4A0F5B015D76589EAEA8F561 /* Pods-Jarvis_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jarvis_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jarvis_Tests/Pods-Jarvis_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		506055A21FB0651C001F1B16 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		506055A51FB079B4001F1B16 /* PostsListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListAPI.swift; sourceTree = "<group>"; };
+		506055A71FB07AD1001F1B16 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		506055A91FB084B5001F1B16 /* PostsListAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListAPIClient.swift; sourceTree = "<group>"; };
+		506055AC1FB08B5B001F1B16 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Jarvis_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jarvis_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,11 +50,11 @@
 		607FACE51AFB9204008FA782 /* Jarvis_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Jarvis_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7048855669AB3FD65DB0C951 /* Jarvis.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Jarvis.podspec; path = ../Jarvis.podspec; sourceTree = "<group>"; };
+		7048855669AB3FD65DB0C951 /* Jarvis.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Jarvis.podspec; path = ../Jarvis.podspec; sourceTree = "<group>"; };
 		8DDF56DABF9881BF0B20D145 /* Pods-Jarvis_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jarvis_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jarvis_Tests/Pods-Jarvis_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B65D51BCCCE9F34A74CC347E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B65D51BCCCE9F34A74CC347E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B95982E398271E220C73B8EB /* Pods-Jarvis_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jarvis_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jarvis_Example/Pods-Jarvis_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		D98EAF4D7E9779FFC5BD01AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D98EAF4D7E9779FFC5BD01AD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E5E1C6C3FC0E59FD36F2B72E /* Pods_Jarvis_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jarvis_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8C521FD13C13FF515621C5 /* Pods_Jarvis_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jarvis_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,6 +79,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		506055A11FB06510001F1B16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				506055A21FB0651C001F1B16 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		506055A41FB07987001F1B16 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				506055A71FB07AD1001F1B16 /* APIError.swift */,
+				506055A51FB079B4001F1B16 /* PostsListAPI.swift */,
+				506055A91FB084B5001F1B16 /* PostsListAPIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		506055AB1FB08B20001F1B16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				506055AC1FB08B5B001F1B16 /* PostCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		562763E3F21D50C70D1ECA82 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +149,9 @@
 		607FACD21AFB9204008FA782 /* Example for Jarvis */ = {
 			isa = PBXGroup;
 			children = (
+				506055A41FB07987001F1B16 /* API */,
+				506055A11FB06510001F1B16 /* Model */,
+				506055AB1FB08B20001F1B16 /* ViewModel */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -352,11 +391,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jarvis_Example/Pods-Jarvis_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/Jarvis/Jarvis.framework",
+				"${BUILT_PRODUCTS_DIR}/MSJSON/MSJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jarvis.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,8 +417,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506055A61FB079B5001F1B16 /* PostsListAPI.swift in Sources */,
+				506055A31FB0651C001F1B16 /* Post.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				506055A81FB07AD1001F1B16 /* APIError.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				506055AD1FB08B5B001F1B16 /* PostCellViewModel.swift in Sources */,
+				506055AA1FB084B5001F1B16 /* PostsListAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

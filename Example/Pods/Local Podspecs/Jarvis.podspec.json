@@ -1,0 +1,56 @@
+{
+  "name": "Jarvis",
+  "version": "0.8.2",
+  "license": "MIT",
+  "summary": "Jarvis",
+  "homepage": "https://git.themindstudios.com/ios-frameworks/Jarvis",
+  "social_media_url": "https://twitter.com/TheMindStudios",
+  "authors": {
+    "Max Mashkov": "max@themindstudios.com"
+  },
+  "source": {
+    "git": "git@git.themindstudios.com:ios-frameworks/Jarvis.git",
+    "tag": "0.8.2"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.10",
+    "tvos": "9.0",
+    "watchos": "2.0"
+  },
+  "frameworks": "Foundation",
+  "dependencies": {
+    "Alamofire": [
+      "~> 4.5"
+    ]
+  },
+  "ios": {
+    "dependencies": {
+      "AlamofireNetworkActivityIndicator": [
+        "~> 2.2"
+      ]
+    }
+  },
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": [
+        "Jarvis/Classes/*.swift",
+        "Jarvis/Classes/HTTP/*.swift"
+      ]
+    },
+    {
+      "name": "MSJSON",
+      "dependencies": {
+        "Jarvis/Core": [
+
+        ],
+        "MSJSON": [
+          "~> 1"
+        ]
+      },
+      "source_files": "Jarvis/Classes/MSJSON/*.swift"
+    }
+  ]
+}
