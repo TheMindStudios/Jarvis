@@ -1,12 +1,15 @@
 Pod::Spec.new do |s|
-  s.name     = 'Jarvis'
-  s.version  = '0.8.2'
-  s.license  = 'MIT'
-  s.summary  = 'Jarvis'
-  s.homepage = 'https://git.themindstudios.com/ios-frameworks/Jarvis'
+  s.name             = 'Jarvis'
+  s.version          = '0.8.2'
+  s.summary          = 'Jarvis'
+  s.description      = 'Description'
+
+
   s.social_media_url = 'https://twitter.com/TheMindStudios'
-  s.authors  = { 'Max Mashkov' => 'max@themindstudios.com' }
-  s.source   = { :git => 'git@git.themindstudios.com:ios-frameworks/Jarvis.git', :tag => s.version }
+  s.homepage         = 'https://github.com/TheMindStudios/Jarvis'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.author           = { 'Max Mashkov' => 'max@themindstudios.com' }
+  s.source           = { :git => 'https://github.com/TheMindStudios/Jarvis.git', :tag => s.version.to_s }
   
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.10'

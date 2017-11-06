@@ -6,13 +6,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'Jarvis_Example' do
-    pod 'SVProgressHUD'
     pod 'Jarvis/MSJSON', :path => '../'
-#  pod 'Jarvis', :path => '../'
 
   target 'Jarvis_Tests' do
     inherit! :search_paths
 
-    
   end
 end
