@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Jarvis_Example' do
+  pod 'Jarvis', :path => '../'
+
+  target 'Jarvis_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
