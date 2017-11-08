@@ -1,6 +1,6 @@
 # Jarvis
 
-[![Platform](https://img.shields.io/badge/platform-ios%20|%20osx%20|%20tvos%20|%20watchos-orange.svg)](https://developer.apple.com)
+[![Platform](https://img.shields.io/badge/platform-ios%20|%20osx%20|%20tvos%20|%20watchos-blue.svg)](https://developer.apple.com)
 [![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat)](https://developer.apple.com/swift)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 [![pod 1.3.1](https://img.shields.io/badge/pod-1.3.1-blue.svg)]()
@@ -41,7 +41,7 @@ import Jarvis
 import MSJSON
 ```
 
-2. Add implementation for `RequestDataProvider` protocol. `RequestDataProvider` has default implementation, so ou can set just properties you need:     
+2. Add implementation for `RequestDataProvider` protocol. `RequestDataProvider` has default implementation, so you can set just properties you need:     
 
 ```swift
 struct PostsListAPIClient {
