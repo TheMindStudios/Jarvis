@@ -8,18 +8,17 @@
 //
 
 import Foundation
-import MSJSON
 import Jarvis
 
 public enum APIError: Jarvis.ResponseError, LocalizedError {
-    
+
     case cancelled
     case parsingFailed
     case noInternetConnection
     case network(HTTP.StatusCode, message: String?)
-    
+
     public var errorDescription: String? {
-        
+
         switch self {
         case .cancelled:
             return nil
@@ -28,7 +27,7 @@ public enum APIError: Jarvis.ResponseError, LocalizedError {
         case .noInternetConnection:
             return "No Internet connection"
         case .network(let statusCode, let message):
-            
+
             if let message = message {
                 return message
             } else {
@@ -45,11 +44,11 @@ public enum APIError: Jarvis.ResponseError, LocalizedError {
             }
         }
     }
-    
+
     public init(response: HTTPURLResponse?, data: Data?, error: Error?) {
-        
+
         if let error = error as NSError? {
-            
+
             switch (error.domain, error.code) {
             case (NSURLErrorDomain, NSURLErrorNotConnectedToInternet):
                 self = .noInternetConnection
@@ -61,50 +60,13 @@ public enum APIError: Jarvis.ResponseError, LocalizedError {
                 break
             }
         }
-        
+
         guard let httpResponse = response, let statusCode = HTTP.StatusCode(rawValue: httpResponse.statusCode) else {
             self = .parsingFailed
             return
         }
         
-        let message: String? = errorMessage(for: response, data: data, error: error)
-        self = .network(statusCode, message: message)
+        self = .network(statusCode, message: error?.localizedDescription)
     }
 }
 
-public enum DataParsingError: Error {
-    case cannotConvertToJSON
-}
-
-public extension Data {
-    
-    public func parse(withOptions options: JSONSerialization.ReadingOptions = []) throws -> JSON {
-        
-        guard let json = try JSONSerialization.jsonObject(with: self, options: options) as? JSON else {
-            throw DataParsingError.cannotConvertToJSON
-        }
-        
-        return json
-    }
-}
-
-private func errorMessage(for response: HTTPURLResponse?, data: Data?, error: Error?) -> String? {
-    
-    let json: JSON?
-    
-    do {
-        json = try data?.parse(withOptions: .allowFragments)
-    } catch {
-        return nil
-    }
-    
-    if let errorValue = json?["error"]?.string {
-        return errorValue
-    }
-    
-    if let error = error as NSError?, error.code != NSURLErrorCancelled {
-        return error.localizedDescription
-    } else {
-        return nil
-    }
-}

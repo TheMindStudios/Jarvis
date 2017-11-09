@@ -15,6 +15,7 @@ Jarvis is a lightweight network abstraction layer, built on top of Alamofire. It
 - [x] Generic, protocol-based implementation
 - [x] Support for iOS/macOS/tvOS/watchOS/
 - [x] Easy to work with MultipartFormData
+- [x] Support Codable protocol in Swift 4
 - [x] Ability to log Response
 
 ## Overview
@@ -78,36 +79,15 @@ struct PostsListAPIClient {
 }
 ```
 
-3. Add `JSONInitializable` protocol support for your model
+3. Make you sure that you model support protocol `Decodable`
 
 ```swift
-
-fileprivate extension JSONKeys {
-    
-    static let id = JSONKey<Int?>("id")
-    static let userId = JSONKey<Int>("userId")
-    static let title = JSONKey<String>("title")
-    static let body = JSONKey<String>("body")
-    
-}
-
-struct Post: JSONInitializable {
+struct Post: Decodable {
     
     let id: Int
     let userId: Int
     let title: String
     let body: String
-    
-    init?(json: JSON) {
-        guard let id = json[.id] else {
-            return nil
-        }
-        
-        self.id = id
-        userId = json[.userId]
-        title = json[.title]
-        body = json[.body]
-    }
 }
 ```
 
@@ -118,7 +98,7 @@ struct Post: JSONInitializable {
 func getPosts(for page: Int, completion: @escaping (_ response: Response<[Post], APIError>) -> Void) {
         
     let request = Route.get(page: page)
-    Jarvis.request(request).responseJSON(completion: completion)
+    Jarvis.request(request).responseDecodable(completion: completion)
 }
 ```
 
@@ -145,7 +125,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'TargetName' do
-  pod 'Jarvis/MSJSON'
+  pod 'Jarvis'
 end
 ```
 

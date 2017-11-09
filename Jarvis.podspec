@@ -28,10 +28,4 @@ Pod::Spec.new do |s|
     ss.source_files = 'Jarvis/Classes/*.swift', 'Jarvis/Classes/HTTP/*.swift'
   end
 
-  s.subspec 'MSJSON' do |ss|
-    ss.dependency 'Jarvis/Core'
-    ss.dependency 'MSJSON', '~> 1'
-    ss.source_files = 'Jarvis/Classes/MSJSON/*.swift'
-  end
-
 end

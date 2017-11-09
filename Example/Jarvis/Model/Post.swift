@@ -7,35 +7,13 @@
 //
 
 import Foundation
-import Jarvis
-import MSJSON
 
-fileprivate extension JSONKeys {
-    
-    static let id = JSONKey<Int?>("id")
-    static let userId = JSONKey<Int>("userId")
-    static let title = JSONKey<String>("title")
-    static let body = JSONKey<String>("body")
-    
-}
-
-struct Post: JSONInitializable {
+struct Post: Decodable {
     
     let id: Int
     let userId: Int
     let title: String
     let body: String
-    
-    init?(json: JSON) {
-        guard let id = json[.id] else {
-            return nil
-        }
-        
-        self.id = id
-        userId = json[.userId]
-        title = json[.title]
-        body = json[.body]
-    }
 }
 
 // MARK: - PostCellViewModel

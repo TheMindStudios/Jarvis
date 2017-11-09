@@ -8,7 +8,6 @@
 
 import Foundation
 import Jarvis
-import MSJSON
 
 struct PostsListAPIClient {
     
@@ -43,12 +42,14 @@ struct PostsListAPIClient {
     }
 }
 
+// MARK: - PostsListAPI
+
 extension PostsListAPIClient: PostsListAPI {
     
     func getPosts(for page: Int, completion: @escaping (_ response: Response<[Post], APIError>) -> Void) {
         
         let request = Route.get(page: page)
-        Jarvis.request(request).responseJSON(completion: completion)
+        Jarvis.request(request).responseDecodable(completion: completion)
     }
 }
 
