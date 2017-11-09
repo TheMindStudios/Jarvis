@@ -39,7 +39,6 @@ api.getPosts(for: page) { response in
 
 ```swift
 import Jarvis
-import MSJSON
 ```
 
 2. Add implementation for `RequestDataProvider` protocol. `RequestDataProvider` has default implementation, so you can set just properties you need:     
