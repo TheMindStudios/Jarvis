@@ -35,7 +35,7 @@ api.getPosts(for: page) { response in
 
 ## Usage
 
-1. Import `Jarvis` and `MSJSON` module to your `APIClient` class
+1. Import `Jarvis` module to your `APIClient` class
 
 ```swift
 import Jarvis
